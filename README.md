@@ -6,6 +6,18 @@ Changing Filestack Viewer appearance is extremely easy with included [SASS files
 ![alt text](https://assets.filestack.com/viewer-assets/filestack-viewer-variables-min.png "Filestack Viewer Variables reference")
 [Open bigger image](https://assets.filestack.com/viewer-assets/filestack-viewer-variables-min.png)
 
+## Generate CSS file
+There are several ways to generate CSS file from SASS files. If you have node.js installed already you can simply use NODE-SASS watching script to compile SASS into CSS:
+First run:
+```
+$ npm install
+```
+And then:
+```
+$ npm run sass
+```
+If you prefer to use an application instead, you can try [CodeKit App](https://codekitapp.com/). There is plenty of options.
+
 ## Remove elements from the Interface
 If you want to remove any button from the interface, you need to use browser's inspector to find assigned `ID`.  At the bottom of `viewer.sass` file add the additional declaration with style `display: none`. In this example, you can turn-off sidebar toggling button:
 
@@ -49,18 +61,10 @@ If you want to remove any button from the interface, you need to use browser's i
 | `#print`                  | **Printer button** printing current document         |
 
 
-# Generate CSS file
-There are several ways to generate CSS file from SASS files. If you have node.js installed already you can simply use NODE-SASS watching script to compile SASS into CSS:
-First run:
-```
-$ npm install
-```
-And then:
-```
-$ npm run sass
-```
-If you prefer to use an application instead, you can try [CodeKit App](https://codekitapp.com/). There is plenty of options.
 
+## Implement Custom Styling
+To implement custom styling into a Filestack Viewer, you need to upload generated `viewer.css` file to Filestack, and get Filehandle of this file. Then to implement custom css into your implementation, construct viewer link like this:
 
-# Implement Custom Styling
-First of all, you need to store generated CSS file online (i.e., in S3). Then you need to use the link to this file while implementing Filestack Viewer into your website, like that:
+```
+https://cdn.filestackcontent.com/preview=css:"https://cdn.filestackcontent.com/CSS_FILEHANDLE"/DOCUMENT_FILEHANDLE
+```
