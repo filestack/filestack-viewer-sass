@@ -1,3 +1,5 @@
+![alt text](https://filestack.com/themes/filestack/assets/images/press-articles/color.svg "Filestack Logo")
+
 # Filestack Viewer Custom Styling
 Changing Filestack Viewer appearance is extremely easy with included [SASS files](https://example.com). To manipulate colors or to re-size, all you have to do is alter initial variables stored in `_initial-variables.sass` file. Here you'll find described keys:
 
@@ -6,6 +8,7 @@ Changing Filestack Viewer appearance is extremely easy with included [SASS files
 
 ## Remove elements from the Interface
 If you want to remove any button from the interface, you need to use browser's inspector to find assigned `ID`.  At the bottom of `viewer.sass` file add the additional declaration with style `display: none`. In this example, you can turn-off sidebar toggling button:
+
 ```sass
 #sidebarToggle
   display: none
@@ -48,6 +51,11 @@ If you want to remove any button from the interface, you need to use browser's i
 
 # Generate CSS file
 There are several ways to generate CSS file from SASS files. If you have node.js installed already you can simply use NODE-SASS watching script to compile SASS into CSS:
+First run:
+```
+$ npm install
+```
+And then:
 ```
 $ npm run sass
 ```
