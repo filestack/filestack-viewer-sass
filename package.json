@@ -1,0 +1,23 @@
+{
+  "name": "filestack-viewer-sass",
+  "version": "1.0.0",
+  "description": "Styling SASS library made to customize Filestack Viewer appearance",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass --watch sass -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filepicker/filestack-viewer-sass.git"
+  },
+  "author": "Filestack",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/filepicker/filestack-viewer-sass/issues"
+  },
+  "homepage": "https://github.com/filepicker/filestack-viewer-sass#readme",
+  "devDependencies": {
+    "node-sass": "^4.7.2"
+  }
+}

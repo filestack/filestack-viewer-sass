@@ -1,4 +1,4 @@
-# Styling
+# Filestack Viewer Custom Styling
 Changing Filestack Viewer appearance is extremely easy with included [SASS files](https://example.com). To manipulate colors or to re-size, all you have to do is alter initial variables stored in `_initial-variables.sass` file. Here you'll find described keys:
 
 ![alt text](https://assets.filestack.com/viewer-assets/filestack-viewer-variables-min.png "Filestack Viewer Variables reference")
@@ -10,7 +10,8 @@ If you want to remove any button from the interface, you need to use browser's i
 #sidebarToggle
   display: none
 ```
-#### Navigation Elements
+
+### Navigation Elements
 
 **Top Navigation**
 
@@ -29,6 +30,7 @@ If you want to remove any button from the interface, you need to use browser's i
 | `#viewBookmark`           | **Bookmark button** setting actual page in url   |
 | `#secondaryToolbarToggle` | **More button** toggling secondary menu          |
 
+
 **Secondary Navigation**
 
 | ID or Class               | Description                                          |
@@ -45,7 +47,11 @@ If you want to remove any button from the interface, you need to use browser's i
 
 
 # Generate CSS file
-There are several ways to generate CSS file from SASS files. If you're familiar with Node.js and Command Line, you can use solution described here: [Watch and compile SASS in five quick steps](https://webdesign.tutsplus.com/tutorials/watch-and-compile-sass-in-five-quick-steps--cms-28275). If you prefer to use an application instead, you can try [CodeKit App](https://codekitapp.com/). There is plenty of options.
+There are several ways to generate CSS file from SASS files. If you have node.js installed already you can simply use NODE-SASS watching script to compile SASS into CSS:
+```
+$ npm run sass
+```
+If you prefer to use an application instead, you can try [CodeKit App](https://codekitapp.com/). There is plenty of options.
 
 
 # Implement Custom Styling
