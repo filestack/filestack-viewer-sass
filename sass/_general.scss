@@ -1,370 +1,37 @@
-.textLayer {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-  opacity: 0.2;
-  line-height: 1; }
-
-.textLayer > span {
-  color: transparent;
-  position: absolute;
-  white-space: pre;
-  cursor: text;
-  transform-origin: 0% 0%; }
-
-.textLayer .highlight {
-  margin: -1px;
-  padding: 1px;
-  background-color: #b400aa;
-  border-radius: 3px; }
-
-.textLayer .highlight.begin {
-  border-radius: 3px 0px 0px 3px; }
-
-.textLayer .highlight.end {
-  border-radius: 0px 3px 3px 0px; }
-
-.textLayer .highlight.middle {
-  border-radius: 0px; }
-
-.textLayer .highlight.selected {
-  background-color: darkgreen; }
-
-.textLayer ::selection {
-  background: blue; }
-
-.textLayer .endOfContent {
-  display: block;
-  position: absolute;
-  left: 0px;
-  top: 100%;
-  right: 0px;
-  bottom: 0px;
-  z-index: -1;
-  cursor: default;
-  user-select: none; }
-
-.textLayer .endOfContent.active {
-  top: 0px; }
-
-/* Copyright 2014 Mozilla Foundation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* Copyright 2014 Mozilla Foundation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-.annotationLayer section {
-  position: absolute; }
-
-.annotationLayer .linkAnnotation > a,
-.annotationLayer .buttonWidgetAnnotation.pushButton > a {
-  position: absolute;
-  font-size: 1em;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; }
-
-.annotationLayer .linkAnnotation > a:hover,
-.annotationLayer .buttonWidgetAnnotation.pushButton > a:hover {
-  opacity: 0.2;
-  background: #ff0;
-  box-shadow: 0px 2px 10px #ff0; }
-
-.annotationLayer .textAnnotation img {
-  position: absolute;
-  cursor: pointer; }
-
-.annotationLayer .textWidgetAnnotation input,
-.annotationLayer .textWidgetAnnotation textarea,
-.annotationLayer .choiceWidgetAnnotation select,
-.annotationLayer .buttonWidgetAnnotation.checkBox input,
-.annotationLayer .buttonWidgetAnnotation.radioButton input {
-  background-color: rgba(0, 54, 255, 0.13);
-  border: 1px solid transparent;
-  box-sizing: border-box;
-  font-size: 9px;
-  height: 100%;
-  margin: 0;
-  padding: 0 3px;
-  vertical-align: top;
-  width: 100%; }
-
-.annotationLayer .choiceWidgetAnnotation select option {
-  padding: 0; }
-
-.annotationLayer .buttonWidgetAnnotation.radioButton input {
-  border-radius: 50%; }
-
-.annotationLayer .textWidgetAnnotation textarea {
-  font: message-box;
-  font-size: 9px;
-  resize: none; }
-
-.annotationLayer .textWidgetAnnotation input[disabled],
-.annotationLayer .textWidgetAnnotation textarea[disabled],
-.annotationLayer .choiceWidgetAnnotation select[disabled],
-.annotationLayer .buttonWidgetAnnotation.checkBox input[disabled],
-.annotationLayer .buttonWidgetAnnotation.radioButton input[disabled] {
-  background: none;
-  border: 1px solid transparent;
-  cursor: not-allowed; }
-
-.annotationLayer .textWidgetAnnotation input:hover,
-.annotationLayer .textWidgetAnnotation textarea:hover,
-.annotationLayer .choiceWidgetAnnotation select:hover,
-.annotationLayer .buttonWidgetAnnotation.checkBox input:hover,
-.annotationLayer .buttonWidgetAnnotation.radioButton input:hover {
-  border: 1px solid black; }
-
-.annotationLayer .textWidgetAnnotation input:focus,
-.annotationLayer .textWidgetAnnotation textarea:focus,
-.annotationLayer .choiceWidgetAnnotation select:focus {
-  background: none;
-  border: 1px solid transparent; }
-
-.annotationLayer .buttonWidgetAnnotation.checkBox input:checked:before,
-.annotationLayer .buttonWidgetAnnotation.checkBox input:checked:after,
-.annotationLayer .buttonWidgetAnnotation.radioButton input:checked:before {
-  background-color: black;
-  content: '';
-  display: block;
-  position: absolute; }
-
-.annotationLayer .buttonWidgetAnnotation.checkBox input:checked:before,
-.annotationLayer .buttonWidgetAnnotation.checkBox input:checked:after {
-  height: 80%;
-  left: 45%;
-  width: 1px; }
-
-.annotationLayer .buttonWidgetAnnotation.checkBox input:checked:before {
-  transform: rotate(45deg); }
-
-.annotationLayer .buttonWidgetAnnotation.checkBox input:checked:after {
-  transform: rotate(-45deg); }
-
-.annotationLayer .buttonWidgetAnnotation.radioButton input:checked:before {
-  border-radius: 50%;
-  height: 50%;
-  left: 30%;
-  top: 20%;
-  width: 50%; }
-
-.annotationLayer .textWidgetAnnotation input.comb {
-  font-family: monospace;
-  padding-left: 2px;
-  padding-right: 0; }
-
-.annotationLayer .textWidgetAnnotation input.comb:focus {
-  /*
-   * Letter spacing is placed on the right side of each character. Hence, the
-   * letter spacing of the last character may be placed outside the visible
-   * area, causing horizontal scrolling. We avoid this by extending the width
-   * when the element has focus and revert this when it loses focus.
-   */
-  width: 115%; }
-
-.annotationLayer .buttonWidgetAnnotation.checkBox input,
-.annotationLayer .buttonWidgetAnnotation.radioButton input {
-  appearance: none;
-  padding: 0; }
-
-.annotationLayer .popupWrapper {
-  position: absolute;
-  width: 20em; }
-
-.annotationLayer .popup {
-  position: absolute;
-  z-index: 200;
-  max-width: 20em;
-  background-color: #FFFF99;
-  box-shadow: 0px 2px 5px #888;
-  border-radius: 2px;
-  padding: 6px;
-  margin-left: 5px;
-  cursor: pointer;
-  font: message-box;
-  font-size: 9px;
-  word-wrap: break-word; }
-
-.annotationLayer .popup > * {
-  font-size: 9px; }
-
-.annotationLayer .popup h1 {
-  display: inline-block; }
-
-.annotationLayer .popup span {
-  display: inline-block;
-  margin-left: 5px; }
-
-.annotationLayer .popup p {
-  border-top: 1px solid #333;
-  margin-top: 2px;
-  padding-top: 2px; }
-
-.annotationLayer .highlightAnnotation,
-.annotationLayer .underlineAnnotation,
-.annotationLayer .squigglyAnnotation,
-.annotationLayer .strikeoutAnnotation,
-.annotationLayer .freeTextAnnotation,
-.annotationLayer .lineAnnotation svg line,
-.annotationLayer .squareAnnotation svg rect,
-.annotationLayer .circleAnnotation svg ellipse,
-.annotationLayer .polylineAnnotation svg polyline,
-.annotationLayer .polygonAnnotation svg polygon,
-.annotationLayer .caretAnnotation,
-.annotationLayer .inkAnnotation svg polyline,
-.annotationLayer .stampAnnotation,
-.annotationLayer .fileAttachmentAnnotation {
-  cursor: pointer; }
-
-.pdfViewer .canvasWrapper {
-  overflow: hidden; }
-
-.pdfViewer .page {
-  direction: ltr;
-  width: 816px;
-  height: 1056px;
-  margin: 1px auto -8px auto;
-  position: relative;
-  overflow: visible;
-  border: 3px solid transparent;
-  background-clip: content-box;
-  border-color: #d5d5d5;
-  background-color: white; }
-
-.pdfViewer.removePageBorders .page {
-  margin: 0px auto 10px auto;
-  border: none; }
-
-.pdfViewer.singlePageView {
-  display: inline-block; }
-
-.pdfViewer.singlePageView .page {
-  margin: 0;
-  border: none; }
-
-.pdfViewer.scrollHorizontal, .pdfViewer.scrollWrapped, .spread {
-  margin-left: 3.5px;
-  margin-right: 3.5px;
-  text-align: center; }
-
-.pdfViewer.scrollHorizontal, .spread {
-  white-space: nowrap; }
-
-.pdfViewer.removePageBorders,
-.pdfViewer.scrollHorizontal .spread,
-.pdfViewer.scrollWrapped .spread {
-  margin-left: 0;
-  margin-right: 0; }
-
-.spread .page,
-.pdfViewer.scrollHorizontal .page,
-.pdfViewer.scrollWrapped .page,
-.pdfViewer.scrollHorizontal .spread,
-.pdfViewer.scrollWrapped .spread {
-  display: inline-block;
-  vertical-align: middle; }
-
-.spread .page,
-.pdfViewer.scrollHorizontal .page,
-.pdfViewer.scrollWrapped .page {
-  margin-left: -3.5px;
-  margin-right: -3.5px; }
-
-.pdfViewer.removePageBorders .spread .page,
-.pdfViewer.removePageBorders.scrollHorizontal .page,
-.pdfViewer.removePageBorders.scrollWrapped .page {
-  margin-left: 5px;
-  margin-right: 5px; }
-
-.pdfViewer .page canvas {
-  margin: 0;
-  display: block; }
-
-.pdfViewer .page canvas[hidden] {
-  display: none; }
-
-.pdfViewer .page .loadingIcon {
-  position: absolute;
-  display: block;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0; }
-
-.pdfPresentationMode .pdfViewer {
-  margin-left: 0;
-  margin-right: 0; }
-
-.pdfPresentationMode .pdfViewer .page,
-.pdfPresentationMode .pdfViewer .spread {
-  display: block; }
-
-.pdfPresentationMode .pdfViewer .page,
-.pdfPresentationMode .pdfViewer.removePageBorders .page {
-  margin-left: auto;
-  margin-right: auto; }
-
-.pdfPresentationMode:-ms-fullscreen .pdfViewer .page {
-  margin-bottom: 100% !important; }
-
-.pdfPresentationMode:fullscreen .pdfViewer .page {
-  margin-bottom: 100%;
-  border: 0; }
-
 * {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+}
 
 html {
   height: 100%;
   width: 100%;
+
   /* Font size is needed to make the activity bar the correct size. */
-  font-size: 10px; }
+  font-size: 10px;
+}
 
 body {
   height: 100%;
   width: 100%;
-  background-color: #eaeaea; }
+  background-color: lighten($interface--background, 5%);
+}
 
 body,
 input,
 button,
 select {
   font: message-box;
-  outline: none; }
+  outline: none;
+}
 
 .hidden {
-  display: none !important; }
+  display: none !important;
+}
 
 [hidden] {
-  display: none !important; }
+  display: none !important;
+}
 
 #viewerContainer.pdfPresentationMode:-webkit-full-screen {
   top: 0;
@@ -374,7 +41,8 @@ select {
   height: 100%;
   overflow: hidden;
   cursor: none;
-  -webkit-user-select: none; }
+  -webkit-user-select: none;
+}
 
 #viewerContainer.pdfPresentationMode:-moz-full-screen {
   top: 0;
@@ -384,7 +52,8 @@ select {
   height: 100%;
   overflow: hidden;
   cursor: none;
-  -moz-user-select: none; }
+  -moz-user-select: none;
+}
 
 #viewerContainer.pdfPresentationMode:-ms-fullscreen {
   top: 0 !important;
@@ -393,10 +62,12 @@ select {
   height: 100%;
   overflow: hidden !important;
   cursor: none;
-  -ms-user-select: none; }
+  -ms-user-select: none;
+}
 
 #viewerContainer.pdfPresentationMode:-ms-fullscreen::-ms-backdrop {
-  background-color: #000; }
+  background-color: #000;
+}
 
 #viewerContainer.pdfPresentationMode:fullscreen {
   top: 0;
@@ -408,84 +79,104 @@ select {
   cursor: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none; }
+  -ms-user-select: none;
+}
 
 .pdfPresentationMode:-webkit-full-screen a:not(.internalLink) {
-  display: none; }
+  display: none;
+}
 
 .pdfPresentationMode:-moz-full-screen a:not(.internalLink) {
-  display: none; }
+  display: none;
+}
 
 .pdfPresentationMode:-ms-fullscreen a:not(.internalLink) {
-  display: none !important; }
+  display: none !important;
+}
 
 .pdfPresentationMode:fullscreen a:not(.internalLink) {
-  display: none; }
+  display: none;
+}
 
 .pdfPresentationMode:-webkit-full-screen .textLayer > div {
-  cursor: none; }
+  cursor: none;
+}
 
 .pdfPresentationMode:-moz-full-screen .textLayer > div {
-  cursor: none; }
+  cursor: none;
+}
 
 .pdfPresentationMode:-ms-fullscreen .textLayer > div {
-  cursor: none; }
+  cursor: none;
+}
 
 .pdfPresentationMode:fullscreen .textLayer > div {
-  cursor: none; }
+  cursor: none;
+}
 
 .pdfPresentationMode.pdfPresentationModeControls > *,
 .pdfPresentationMode.pdfPresentationModeControls .textLayer > div {
-  cursor: default; }
+  cursor: default;
+}
 
 #outerContainer {
   width: 100%;
   height: 100%;
-  position: relative; }
+  position: relative;
+}
 
 #sidebarContainer {
   position: absolute;
-  top: 57px;
+  top: $toolbar_height--main - 1px;
   bottom: 0;
-  width: 200px;
+  width: $sidebar_width;
   visibility: hidden;
   z-index: 100;
   border-top: 1px solid transparent;
   -webkit-transition-duration: 200ms;
   -webkit-transition-timing-function: ease;
   transition-duration: 200ms;
-  transition-timing-function: ease; }
+  transition-timing-function: ease;
+}
 
 html[dir='ltr'] #sidebarContainer {
   -webkit-transition-property: left;
   transition-property: left;
-  left: -200px; }
+  left: -1 * $sidebar_width;
+}
 
 html[dir='rtl'] #sidebarContainer {
   -webkit-transition-property: right;
   transition-property: right;
-  right: -200px; }
+  right: -1 * $sidebar_width;
+}
 
 .loadingInProgress #sidebarContainer {
-  top: 62px; }
+  top: $toolbar_height--main + 4px;
+}
 
 #outerContainer.sidebarResizing #sidebarContainer {
   /* Improve responsiveness and avoid visual glitches when the sidebar is resized. */
   -webkit-transition-duration: 0s;
   transition-duration: 0s;
+
   /* Prevent e.g. the thumbnails being selected when the sidebar is resized. */
   -webkit-user-select: none;
-  -moz-user-select: none; }
+  -moz-user-select: none;
+}
 
 #outerContainer.sidebarMoving #sidebarContainer,
 #outerContainer.sidebarOpen #sidebarContainer {
-  visibility: visible; }
+  visibility: visible;
+}
 
 html[dir='ltr'] #outerContainer.sidebarOpen #sidebarContainer {
-  left: 0; }
+  left: 0;
+}
 
 html[dir='rtl'] #outerContainer.sidebarOpen #sidebarContainer {
-  right: 0; }
+  right: 0;
+}
 
 #mainContainer {
   position: absolute;
@@ -493,30 +184,34 @@ html[dir='rtl'] #outerContainer.sidebarOpen #sidebarContainer {
   right: 0;
   bottom: 0;
   left: 0;
-  min-width: 320px; }
+  min-width: 320px;
+}
 
 #sidebarContent {
-  top: 58px;
+  top: $toolbar_height--sidebar;
   bottom: 0;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   position: absolute;
   width: 100%;
-  background-color: #dddddd; }
+  background-color: $interface--background;
+}
 
 html[dir='ltr'] #sidebarContent {
   left: 0;
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25); }
+  box-shadow: inset -1px 0 0 hsla(0, 0%, 0%, 0.25);
+}
 
 html[dir='rtl'] #sidebarContent {
   right: 0;
-  box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.25); }
+  box-shadow: inset 1px 0 0 hsla(0, 0%, 0%, 0.25);
+}
 
 #viewerContainer {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   position: absolute;
-  top: 58px;
+  top: $toolbar_height--main;
   right: 0;
   bottom: 0;
   left: 0;
@@ -524,79 +219,105 @@ html[dir='rtl'] #sidebarContent {
   -webkit-transition-duration: 200ms;
   -webkit-transition-timing-function: ease;
   transition-duration: 200ms;
-  transition-timing-function: ease; }
+  transition-timing-function: ease;
+}
 
 #filestackBranding--bottom {
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 58px;
-  background-color: #dddddd;
-  display: none; }
+  height: $toolbar_height--main;
+  background-color: $interface--background;
+  display: none;
+}
 
 @media screen and (max-width: 890px) {
   #viewerContainer {
-    bottom: 58px; }
-    #viewerContainer.whitelabel {
-      bottom: 0; }
+    bottom: $toolbar_height--main;
+
+    &.whitelabel {
+      bottom: 0;
+    }
+  }
+
   #filestackBranding {
     bottom: 0;
-    min-width: 200px; }
+    min-width: 200px;
+  }
+
   #filestackBranding--bottom {
-    display: block; }
-    #filestackBranding--bottom.whitelabel {
-      display: none; }
+    display: block;
+
+    &.whitelabel {
+      display: none;
+    }
+  }
+
   #sidebarContent {
-    bottom: 58px; } }
+    bottom: $toolbar_height--main;
+  }
+}
 
 @media screen and (min-width: 891px) {
   #filestackBranding {
-    top: 0; } }
+    top: 0;
+  }
+}
 
 html[dir='ltr'] #viewerContainer {
-  box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.05); }
+  box-shadow: inset 1px 0 0 hsla(0, 0%, 100%, 0.05);
+}
 
 html[dir='rtl'] #viewerContainer {
-  box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.05); }
+  box-shadow: inset -1px 0 0 hsla(0, 0%, 100%, 0.05);
+}
 
 #outerContainer.sidebarResizing #viewerContainer {
   /* Improve responsiveness and avoid visual glitches when the sidebar is resized. */
   -webkit-transition-duration: 0s;
-  transition-duration: 0s; }
+  transition-duration: 0s;
+}
 
 html[dir='ltr'] #outerContainer.sidebarOpen #viewerContainer {
   -webkit-transition-property: left;
   transition-property: left;
   left: 200px;
-  left: 200px; }
+  left: $sidebar_width;
+}
 
 html[dir='rtl'] #outerContainer.sidebarOpen #viewerContainer {
   -webkit-transition-property: right;
   transition-property: right;
   right: 200px;
-  right: 200px; }
+  right: $sidebar_width;
+}
 
 .toolbar {
   position: relative;
   left: 0;
   right: 0;
   z-index: 9999;
-  cursor: default; }
+  cursor: default;
+}
 
 #toolbarContainer {
-  width: 100%; }
+  width: 100%;
+}
 
 #toolbarSidebar {
   width: 100%;
-  height: 58px;
-  background-color: #dddddd; }
+  height: $toolbar_height--sidebar;
+  background-color: $interface--background;
+}
 
 html[dir='ltr'] #toolbarSidebar {
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(255, 255, 255, 0.05), 0 1px 0 rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.1); }
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25), inset 0 -1px 0 hsla(0, 0%, 100%, 0.05), 0 1px 0 hsla(0, 0%, 0%, 0.15), 0 0 1px hsla(0, 0%, 0%, 0.1);
+}
 
 html[dir='rtl'] #toolbarSidebar {
-  box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 1px 0 rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.1); }
+  box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.25), inset 0 1px 0 hsla(0, 0%, 100%, 0.05), 0 1px 0 hsla(0, 0%, 0%, 0.15), 0 0 1px hsla(0, 0%, 0%, 0.1);
+}
 
 #sidebarResizer {
   position: absolute;
@@ -604,33 +325,43 @@ html[dir='rtl'] #toolbarSidebar {
   bottom: 0;
   width: 6px;
   z-index: 200;
-  cursor: ew-resize; }
+  cursor: ew-resize;
+}
 
 html[dir='ltr'] #sidebarResizer {
-  right: -6px; }
+  right: -6px;
+}
 
 html[dir='rtl'] #sidebarResizer {
-  left: -6px; }
+  left: -6px;
+}
 
 #toolbarContainer, .findbar, .secondaryToolbar {
   position: relative;
-  height: 58px;
-  background-color: #dddddd; }
+  height: $toolbar_height--main;
+  background-color: $interface--background;
+}
 
 html[dir='ltr'] #toolbarContainer, .findbar, .secondaryToolbar {
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.15), inset 0 -1px 0 rgba(255, 255, 255, 0.05), 0 1px 0 rgba(0, 0, 0, 0.15), 0 1px 1px rgba(0, 0, 0, 0.1); }
+  box-shadow: inset 0 1px 1px hsla(0, 0%, 0%, 0.15), inset 0 -1px 0 hsla(0, 0%, 100%, 0.05), 0 1px 0 hsla(0, 0%, 0%, 0.15), 0 1px 1px hsla(0, 0%, 0%, 0.1);
+}
 
 html[dir='rtl'] #toolbarContainer, .findbar, .secondaryToolbar {
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.15), inset 0 -1px 0 rgba(255, 255, 255, 0.05), 0 1px 0 rgba(0, 0, 0, 0.15), 0 1px 1px rgba(0, 0, 0, 0.1); }
+  box-shadow: inset 0 1px 1px hsla(0, 0%, 0%, 0.15), inset 0 -1px 0 hsla(0, 0%, 100%, 0.05), 0 1px 0 hsla(0, 0%, 0%, 0.15), 0 1px 1px hsla(0, 0%, 0%, 0.1);
+}
 
 #toolbarViewer {
-  height: 58px; }
+  height: $toolbar_height--main;
+}
 
 #loadingBar {
   position: relative;
   width: 100%;
   height: 4px;
-  background-color: rgba(221, 221, 221, 0.6); }
+  background-color: rgba($interface--background, 0.6);
+
+  // border-bottom: 1px solid #333
+}
 
 #loadingBar .progress {
   position: absolute;
@@ -638,27 +369,37 @@ html[dir='rtl'] #toolbarContainer, .findbar, .secondaryToolbar {
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: #646464;
+  background-color: $interface--color;
   overflow: hidden;
   -webkit-transition: width 200ms;
-  transition: width 200ms; }
+  transition: width 200ms;
+}
 
 @-webkit-keyframes progressIndeterminate {
   0% {
-    left: -142px; }
+    left: -142px;
+  }
+
   100% {
-    left: 0; } }
+    left: 0;
+  }
+}
 
 @keyframes progressIndeterminate {
   0% {
-    left: -142px; }
+    left: -142px;
+  }
+
   100% {
-    left: 0; } }
+    left: 0;
+  }
+}
 
 #loadingBar .progress.indeterminate {
   background-color: #999;
   -webkit-transition: none;
-  transition: none; }
+  transition: none;
+}
 
 #loadingBar .progress.indeterminate .glimmer {
   position: absolute;
@@ -668,92 +409,113 @@ html[dir='rtl'] #toolbarContainer, .findbar, .secondaryToolbar {
   width: calc(100% + 150px);
   background: repeating-linear-gradient(135deg, #bbb 0, #999 5px, #999 45px, #ddd 55px, #ddd 95px, #bbb 100px);
   -webkit-animation: progressIndeterminate 950ms linear infinite;
-  animation: progressIndeterminate 950ms linear infinite; }
+  animation: progressIndeterminate 950ms linear infinite;
+}
 
 .findbar, .secondaryToolbar {
-  top: 58px;
+  top: $toolbar_height--main;
   position: absolute;
   z-index: 10000;
   height: auto;
   min-width: 16px;
   padding: 0 6px 0 6px;
   margin: 4px 2px 4px 2px;
-  color: #d9d9d9;
+  color: hsl(0, 0%, 85%);
   font-size: 12px;
   line-height: 14px;
   text-align: left;
-  cursor: default; }
+  cursor: default;
+}
 
 .findbar {
-  min-width: 300px; }
+  min-width: 300px;
+}
 
 .findbar > div {
-  height: 58px; }
+  height: $toolbar_height--main;
+}
 
 .findbar.wrapContainers > div {
-  clear: both; }
+  clear: both;
+}
 
 .findbar.wrapContainers > div#findbarMessageContainer {
-  height: auto; }
+  height: auto;
+}
 
 html[dir='ltr'] .findbar {
-  left: 75px; }
+  left: 75px;
+}
 
 html[dir='rtl'] .findbar {
-  right: 68px; }
+  right: 68px;
+}
 
 .findbar label {
   -webkit-user-select: none;
-  -moz-user-select: none; }
+  -moz-user-select: none;
+}
 
 #findInput {
   width: 200px;
-  color: #646464; }
+  color: $interface--color;
+}
 
 #findInput::-webkit-input-placeholder {
-  font-style: italic; }
+  font-style: italic;
+}
 
 #findInput::-moz-placeholder {
-  font-style: italic; }
+  font-style: italic;
+}
 
 #findInput:-ms-input-placeholder {
-  font-style: italic; }
+  font-style: italic;
+}
 
 #findInput::placeholder {
-  font-style: italic; }
+  font-style: italic;
+}
 
 #findInput[data-status="pending"] ~ .spinner {
   display: block;
   position: absolute !important;
   left: auto;
-  right: 15px; }
+  right: 15px;
+}
 
 html[dir='rtl'] #findInput[data-status="pending"] {
-  background-position: left; }
+  background-position: left;
+}
 
 .secondaryToolbar {
   padding: 6px;
   height: auto;
-  z-index: 30000; }
+  z-index: 30000;
+}
 
 html[dir='ltr'] .secondaryToolbar {
-  right: 4px; }
+  right: 4px;
+}
 
 html[dir='rtl'] .secondaryToolbar {
-  left: 4px; }
+  left: 4px;
+}
 
 #secondaryToolbarButtonContainer {
   max-width: 200px;
   max-height: 400px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  margin-bottom: -4px; }
+  margin-bottom: -4px;
+}
 
 .doorHanger,
 .doorHangerRight {
-  border: 1px solid #b7b7b7;
+  border: 1px solid darken($interface--background, 15%);
   border-radius: 2px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); }
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
 
 .doorHanger:after, .doorHanger:before,
 .doorHangerRight:after, .doorHangerRight:before {
@@ -763,155 +525,191 @@ html[dir='rtl'] .secondaryToolbar {
   height: 0;
   width: 0;
   position: absolute;
-  pointer-events: none; }
+  pointer-events: none;
+}
 
 .doorHanger:after,
 .doorHangerRight:after {
-  border-bottom-color: #dddddd;
-  border-width: 8px; }
+  border-bottom-color: $interface--background;
+  border-width: 8px;
+}
 
 .doorHanger:before,
 .doorHangerRight:before {
-  border-bottom-color: #b7b7b7;
-  border-width: 9px; }
+  border-bottom-color: darken($interface--background, 15%);
+  border-width: 9px;
+}
 
 html[dir='ltr'] .doorHanger:after,
 html[dir='rtl'] .doorHangerRight:after {
   left: 13px;
-  margin-left: -8px; }
+  margin-left: -8px;
+}
 
 html[dir='ltr'] .doorHanger:before,
 html[dir='rtl'] .doorHangerRight:before {
   left: 13px;
-  margin-left: -9px; }
+  margin-left: -9px;
+}
 
 html[dir='rtl'] .doorHanger:after,
 html[dir='ltr'] .doorHangerRight:after {
   right: 13px;
-  margin-right: -8px; }
+  margin-right: -8px;
+}
 
 html[dir='rtl'] .doorHanger:before,
 html[dir='ltr'] .doorHangerRight:before {
   right: 13px;
-  margin-right: -9px; }
+  margin-right: -9px;
+}
 
 #findResultsCount {
-  background-color: #d0d0d0;
-  color: #646464;
+  background-color: darken($interface--background, 5%);
+  color: $interface--color;
   text-align: center;
-  padding: 0 4px; }
+  padding: 0 4px;
+}
 
 #findMsg {
   font-style: italic;
-  color: #A6B7D0; }
+  color: #A6B7D0;
+}
 
 #findMsg:empty {
-  display: none; }
+  display: none;
+}
 
 #findInput.notFound {
-  background-color: #ff6666; }
+  background-color: rgb(255, 102, 102);
+}
 
 #toolbarViewerMiddle {
   float: right;
-  position: relative; }
+  position: relative;
+}
 
 #filestackBranding {
-  margin-top: 13px;
-  margin-bottom: 13px;
-  height: 32px;
+  margin-top: ($toolbar_height--main - $toolbar__button_size) / 2;
+  margin-bottom: ($toolbar_height--main - $toolbar__button_size) / 2;
+  height: $toolbar__button_size;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%); }
-  #filestackBranding .toolbarLabel {
+  transform: translateX(-50%);
+
+  .toolbarLabel {
     padding: 0 5px 0 0;
     margin: 0;
     display: inline-block;
-    line-height: 32px; }
-  #filestackBranding a {
+    line-height: $toolbar__button_size;
+  }
+
+  a {
     height: 100%;
-    text-align: left; }
-  #filestackBranding svg {
+    text-align: left;
+  }
+
+  svg {
     vertical-align: middle;
-    height: 100%; }
+    height: 100%;
+  }
+}
 
 html[dir='ltr'] #toolbarViewerLeft,
 html[dir='rtl'] #toolbarViewerRight {
-  float: left; }
+  float: left;
+}
 
 html[dir='ltr'] #toolbarViewerRight,
 html[dir='rtl'] #toolbarViewerLeft {
-  float: right; }
+  float: right;
+}
 
 html[dir='ltr'] #toolbarViewerLeft > *,
 html[dir='ltr'] #toolbarViewerMiddle > *,
 html[dir='ltr'] #toolbarViewerRight > *,
 html[dir='ltr'] .findbar * {
   position: relative;
-  float: left; }
+  float: left;
+}
 
 html[dir='ltr'] .findbar .toolbarButton svg {
-  position: absolute; }
+  position: absolute;
+}
 
 html[dir='rtl'] #toolbarViewerLeft > *,
 html[dir='rtl'] #toolbarViewerMiddle > *,
 html[dir='rtl'] #toolbarViewerRight > *,
 html[dir='rtl'] .findbar * {
   position: relative;
-  float: right; }
+  float: right;
+}
 
 html[dir='ltr'] .splitToolbarButton {
   margin: 5px;
-  margin-top: 13px;
-  margin-bottom: 13px;
-  display: inline-block; }
+  margin-top: ($toolbar_height--main - $toolbar__button_size) / 2;
+  margin-bottom: ($toolbar_height--main - $toolbar__button_size) / 2;
+  display: inline-block;
+}
 
 html[dir='ltr'] #toolbarSidebar .splitToolbarButton {
-  margin-top: 13px;
-  margin-bottom: 13px; }
+  margin-top: ($toolbar_height--sidebar - $toolbar__button_size) / 2;
+  margin-bottom: ($toolbar_height--sidebar - $toolbar__button_size) / 2;
+}
 
 html[dir='rtl'] .splitToolbarButton {
   margin: 3px 0 4px 2px;
-  display: inline-block; }
+  display: inline-block;
+}
 
 html[dir='ltr'] .splitToolbarButton > .toolbarButton {
   border-radius: 0;
-  float: left; }
+  float: left;
+}
 
 html[dir='rtl'] .splitToolbarButton > .toolbarButton {
   border-radius: 0;
-  float: right; }
+  float: right;
+}
 
 .toolbarButton,
 .secondaryToolbarButton,
 .overlayButton {
   border: 0 none;
   background: none;
-  width: 32px;
-  height: 32px; }
+  width: $toolbar__button_size;
+  height: $toolbar__button_size;
+}
 
 .toolbarButton > span {
   display: inline-block;
   width: 0;
   height: 0;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .toolbarButton[disabled],
 .secondaryToolbarButton[disabled],
 .overlayButton[disabled] {
-  opacity: 0.5; }
+  opacity: 0.5;
+}
 
 .splitToolbarButton.toggled .toolbarButton {
-  margin: 0; }
+  margin: 0;
+}
 
 .splitToolbarButton:hover > .toolbarButton,
 .splitToolbarButton:focus > .toolbarButton,
 .splitToolbarButton.toggled > .toolbarButton,
 .toolbarButton.textButton {
-  border: 1px solid rgba(100, 100, 100, 0.5); }
+  // background-color: lighten($interface--background, 3%)
+  border: 1px solid rgba($interface--color, 0.5);
+}
 
 .toolbarButton:hover {
-  background-color: #e5e5e5;
-  border: 1px solid rgba(100, 100, 100, 0.5); }
+  background-color: lighten($interface--background, 3%);
+  border: 1px solid rgba($interface--color, 0.5);
+}
 
 .splitToolbarButton > .toolbarButton:hover,
 .splitToolbarButton > .toolbarButton:focus,
@@ -920,41 +718,49 @@ html[dir='rtl'] .splitToolbarButton > .toolbarButton {
 .overlayButton:focus,
 .toolbarButton.textButton:hover,
 .toolbarButton.textButton:focus {
-  z-index: 199; }
+  // background-color: lighten($interface--background, 3%)
+  z-index: 199;
+}
 
 .splitToolbarButton > .toolbarButton {
-  position: relative; }
+  position: relative;
+}
 
 html[dir='ltr'] .splitToolbarButton > .toolbarButton:first-child,
 html[dir='rtl'] .splitToolbarButton > .toolbarButton:last-child {
   position: relative;
   margin: 0;
   margin-right: -1px;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  border-right-color: transparent; }
+  border-top-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+  border-right-color: transparent;
+}
 
 html[dir='ltr'] .splitToolbarButton > .toolbarButton:last-child,
 html[dir='rtl'] .splitToolbarButton > .toolbarButton:first-child {
   position: relative;
   margin: 0;
   margin-left: -1px;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-left-color: transparent; }
+  border-top-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+  border-left-color: transparent;
+}
 
 .toolbarButton,
 .dropdownToolbarButton,
 .secondaryToolbarButton,
 .overlayButton {
+  // min-width: 32px
+  // padding: 2px 6px 0
   border: 1px solid transparent;
-  border-radius: 3px;
-  color: #646464;
+  border-radius: $radius;
+  color: $interface--color;
   font-size: 12px;
   line-height: 14px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+
   /* Opera does not support user-select, use <... unselectable="on"> instead */
   cursor: default;
   -webkit-transition-property: background-color, border-color, box-shadow;
@@ -962,19 +768,22 @@ html[dir='rtl'] .splitToolbarButton > .toolbarButton:first-child {
   -webkit-transition-timing-function: ease;
   transition-property: background-color, border-color, box-shadow;
   transition-duration: 150ms;
-  transition-timing-function: ease; }
+  transition-timing-function: ease;
+}
 
 html[dir='ltr'] .toolbarButton,
 html[dir='ltr'] .overlayButton,
 html[dir='ltr'] .dropdownToolbarButton {
   margin: 5px;
-  margin-top: 13px;
-  margin-bottom: 13px; }
+  margin-top: ($toolbar_height--main - $toolbar__button_size) / 2;
+  margin-bottom: ($toolbar_height--main - $toolbar__button_size) / 2;
+}
 
 html[dir='rtl'] .toolbarButton,
 html[dir='rtl'] .overlayButton,
 html[dir='rtl'] .dropdownToolbarButton {
-  margin: 3px 0 4px 2px; }
+  margin: 3px 0 4px 2px;
+}
 
 .toolbarButton:hover:active,
 .overlayButton:hover:active,
@@ -983,15 +792,17 @@ html[dir='rtl'] .dropdownToolbarButton {
 .toolbarButton.toggled,
 .splitToolbarButton.toggled > .toolbarButton.toggled,
 .secondaryToolbarButton.toggled {
-  background-color: #e5e5e5;
-  border: 1px solid #646464; }
+  background-color: lighten($interface--background, 3%);
+  border: 1px solid $interface--color;
+}
 
 .toolbarButton.toggled:hover:active,
 .splitToolbarButton.toggled > .toolbarButton.toggled:hover:active,
 .secondaryToolbarButton.toggled:hover:active {
-  background-color: rgba(0, 0, 0, 0.4);
-  border-color: rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.55);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) inset, 0 0 1px rgba(0, 0, 0, 0.3) inset, 0 1px 0 rgba(255, 255, 255, 0.05); }
+  background-color: hsla(0, 0%, 0%, 0.4);
+  border-color: hsla(0, 0%, 0%, 0.4) hsla(0, 0%, 0%, 0.5) hsla(0, 0%, 0%, 0.55);
+  box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.2) inset, 0 0 1px hsla(0, 0%, 0%, 0.3) inset, 0 1px 0 hsla(0, 0%, 100%, 0.05);
+}
 
 .dropdownToolbarButton {
   position: relative;
@@ -999,78 +810,96 @@ html[dir='rtl'] .dropdownToolbarButton {
   max-width: 120px;
   padding: 0;
   overflow: hidden;
-  border-radius: 3px;
-  border: 1px solid #646464;
+  border-radius: $radius;
+  border: 1px solid $interface--color;
   background-color: transparent !important;
-  z-index: 199; }
-  .dropdownToolbarButton .select-arrows {
+  z-index: 199;
+
+  .select-arrows {
     position: absolute;
     top: 50%;
     right: -6px;
     transform: translateY(-50%);
-    z-index: -1; }
+    z-index: -1;
+  }
+}
 
 .dropdownToolbarButton > select {
   min-width: 140px;
   font-size: 12px;
-  color: #f2f2f2;
+  color: hsl(0, 0%, 95%);
   margin: 0;
   padding: 3px 2px 2px;
   border: none;
-  height: 30px;
-  color: #646464;
-  background: rgba(0, 0, 0, 0); }
+  height: $toolbar__button_size - 2px;
+  color: $interface--color;
+  background: rgba(0, 0, 0, 0);
+}
 
 .dropdownToolbarButton > select > option {
-  background: #3d3d3d; }
+  background: hsl(0, 0%, 24%);
+}
 
 #customScaleOption {
-  display: none; }
+  display: none;
+}
 
 #pageWidthOption {
-  border-bottom: 1px rgba(255, 255, 255, 0.5) solid; }
+  border-bottom: 1px rgba(255, 255, 255, 0.5) solid;
+}
 
 html[dir='ltr'] .splitToolbarButton:first-child,
 html[dir='ltr'] .toolbarButton:first-child,
 html[dir='rtl'] .splitToolbarButton:last-child,
 html[dir='rtl'] .toolbarButton:last-child {
-  margin-left: 5px; }
+  margin-left: 5px;
+}
 
 html[dir='ltr'] .splitToolbarButton:last-child,
 html[dir='ltr'] .toolbarButton:last-child,
 html[dir='rtl'] .splitToolbarButton:first-child,
 html[dir='rtl'] .toolbarButton:first-child {
-  margin-right: 5px; }
+  margin-right: 5px;
+}
 
 .toolbarButtonSpacer {
   width: 30px;
   display: inline-block;
-  height: 1px; }
+  height: 1px;
+}
 
 html[dir='ltr'] #findPrevious {
-  margin-left: 3px; }
+  margin-left: 3px;
+}
 
 html[dir='ltr'] #findNext {
-  margin-right: 3px; }
+  margin-right: 3px;
+}
 
 html[dir='rtl'] #findPrevious {
-  margin-right: 3px; }
+  margin-right: 3px;
+}
 
 html[dir='rtl'] #findNext {
-  margin-left: 3px; }
+  margin-left: 3px;
+}
 
 .toolbarButton {
-  position: relative; }
-  .toolbarButton svg {
+  position: relative;
+
+  svg {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 100%;
     height: 100%;
-    transform: translateX(-50%) translateY(-50%); }
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
 
 .button-icon {
-  fill: #646464; }
+  fill: $interface--color;
+}
 
 .toolbarButton.bookmark,
 .secondaryToolbarButton.bookmark {
@@ -1079,31 +908,38 @@ html[dir='rtl'] #findNext {
   box-sizing: border-box;
   outline: none;
   padding-top: 4px;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 .secondaryToolbarButton.bookmark {
-  padding-top: 5px; }
+  padding-top: 5px;
+}
 
 .bookmark[href='#'] {
   opacity: 0.5;
-  pointer-events: none; }
+  pointer-events: none;
+}
 
 .toolbarButton.pdfSidebarNotification::after {
   position: absolute;
   display: inline-block;
   top: 1px;
+
   /* Create a filled circle, with a diameter of 9 pixels, using only CSS: */
   content: "";
   background-color: #70DB55;
   height: 9px;
   width: 9px;
-  border-radius: 50%; }
+  border-radius: 50%;
+}
 
 html[dir='ltr'] .toolbarButton.pdfSidebarNotification::after {
-  left: 17px; }
+  left: 17px;
+}
 
 html[dir='rtl'] .toolbarButton.pdfSidebarNotification::after {
-  right: 17px; }
+  right: 17px;
+}
 
 .secondaryToolbarButton {
   position: relative;
@@ -1113,127 +949,165 @@ html[dir='rtl'] .toolbarButton.pdfSidebarNotification::after {
   min-height: 25px;
   width: auto;
   min-width: 100%;
-  white-space: normal; }
+  white-space: normal;
+}
 
 html[dir="ltr"] .secondaryToolbarButton {
-  text-align: left; }
+  // padding-left: 24px
+  text-align: left;
+}
 
 html[dir="rtl"] .secondaryToolbarButton {
   padding-right: 24px;
-  text-align: right; }
+  text-align: right;
+}
 
 html[dir="ltr"] .secondaryToolbarButton.bookmark {
-  padding-left: 27px; }
+  padding-left: 27px;
+}
 
 html[dir="rtl"] .secondaryToolbarButton.bookmark {
-  padding-right: 27px; }
+  padding-right: 27px;
+}
 
 html[dir="ltr"] .secondaryToolbarButton > svg {
-  vertical-align: middle; }
+  vertical-align: middle;
+}
 
 html[dir="ltr"] .secondaryToolbarButton > span {
   padding-right: 4px;
-  line-height: 32px;
-  display: inline-block; }
+  line-height: $toolbar__button_size;
+  display: inline-block;
+}
 
 html[dir="rtl"] .secondaryToolbarButton > span {
-  padding-left: 4px; }
+  padding-left: 4px;
+}
 
 .verticalToolbarSeparator {
   display: block;
-  border-right: 1px solid rgba(100, 100, 100, 0.5);
+
+  // padding: 8px 0
+  // margin: 8px 4px
+  border-right: 1px solid rgba($interface--color, 0.5);
   width: 0;
-  height: 16px;
-  margin-top: 21px;
-  margin-right: 5px; }
+  height: $toolbar__button_size / 2;
+  margin-top: ($toolbar_height--main - $toolbar__button_size / 2) / 2;
+  margin-right: 5px;
+
+  // background-color: hsla(0,0%,0%,.5)
+  // box-shadow: 0 0 0 1px hsla(0,0%,100%,.08)
+}
 
 html[dir='ltr'] .verticalToolbarSeparator {
-  margin-left: 2px; }
+  margin-left: 2px;
+}
 
 html[dir='rtl'] .verticalToolbarSeparator {
-  margin-right: 2px; }
+  margin-right: 2px;
+}
 
 .horizontalToolbarSeparator {
   display: block;
   margin: 0 0 4px 0;
   height: 1px;
   width: 100%;
-  background-color: #646464; }
+  background-color: $interface--color;
+
+  // box-shadow: 0 0 0 1px hsla(0,0%,100%,.08)
+}
 
 .toolbarField {
   padding: 0 6px;
   margin: 5px;
-  margin-top: 13px;
-  margin-bottom: 13px;
-  border-radius: 3px;
-  height: 30px;
-  background-color: #e5e5e5;
-  border: 1px solid #646464;
-  color: #646464;
+  margin-top: ($toolbar_height--main - $toolbar__button_size) / 2;
+  margin-bottom: ($toolbar_height--main - $toolbar__button_size) / 2;
+
+  // border: 1px solid transparent
+  border-radius: $radius;
+  height: $toolbar__button_size - 2px;
+  background-color: lighten($interface--background, 3%);
+  border: 1px solid $interface--color;
+  color: $interface--color;
   font-size: 12px;
-  line-height: 32px;
+  line-height: $toolbar__button_size;
   outline-style: none;
   transition-property: background-color, border-color, box-shadow;
   transition-duration: 150ms;
-  transition-timing-function: ease; }
+  transition-timing-function: ease;
+}
 
 .toolbarField[type=checkbox] {
-  display: inline-block; }
+  display: inline-block;
+
+  // margin: 8px 0
+}
 
 .indicatorWrapper {
-  position: relative; }
-  .indicatorWrapper .spinner {
+  position: relative;
+
+  .spinner {
     animation: rotate 1s linear infinite;
     z-index: 2;
     position: absolute;
     top: 50%;
     left: 20px;
-    margin: -10px 0 0 -10px;
+    margin: (-10px) 0 0 -10px;
     width: 20px;
     height: 20px;
     background: transparent;
-    display: none; }
-    .indicatorWrapper .spinner .path {
-      stroke: #646464;
+    display: none;
+
+    & .path {
+      stroke: $interface--color;
       stroke-linecap: round;
-      animation: dash 1.5s ease-in-out infinite; }
+      animation: dash 1.5s ease-in-out infinite;
+    }
+  }
+}
 
 .toolbarField.pageNumber {
   -moz-appearance: textfield;
   min-width: 16px;
   text-align: right;
-  width: 40px; }
+  width: 40px;
+}
 
 .toolbarField.pageNumber.visiblePageIsLoading ~ .spinner {
-  display: block; }
+  display: block;
+}
 
 .toolbarField.pageNumber::-webkit-inner-spin-button,
 .toolbarField.pageNumber::-webkit-outer-spin-button {
   -webkit-appearance: none;
-  margin: 0; }
+  margin: 0;
+}
 
 .toolbarField:hover {
-  background-color: rgba(255, 255, 255, 0.11);
-  border-color: rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.43) rgba(0, 0, 0, 0.45); }
+  background-color: hsla(0, 0%, 100%, 0.11);
+  border-color: hsla(0, 0%, 0%, 0.4) hsla(0, 0%, 0%, 0.43) hsla(0, 0%, 0%, 0.45);
+}
 
 .toolbarField:focus {
-  background-color: rgba(255, 255, 255, 0.15);
-  border-color: rgba(77, 184, 255, 0.8) rgba(77, 184, 255, 0.85) rgba(77, 184, 255, 0.9); }
+  background-color: hsla(0, 0%, 100%, 0.15);
+  border-color: hsla(204, 100%, 65%, 0.8) hsla(204, 100%, 65%, 0.85) hsla(204, 100%, 65%, 0.9);
+}
 
 .toolbarLabel {
   min-width: 16px;
   margin: 5px;
-  margin-top: 13px;
-  margin-bottom: 13px;
+  margin-top: ($toolbar_height--main - $toolbar__button_size) / 2;
+  margin-bottom: ($toolbar_height--main - $toolbar__button_size) / 2;
   border: 1px solid transparent;
   border-radius: 2px;
-  color: #646464;
+  color: $interface--color;
   font-size: 12px;
-  line-height: 30px;
+  line-height: $toolbar__button_size - 2px;
   text-align: left;
   -webkit-user-select: none;
   -moz-user-select: none;
-  cursor: default; }
+  cursor: default;
+}
 
 #thumbnailView {
   position: absolute;
@@ -1242,26 +1116,33 @@ html[dir='rtl'] .verticalToolbarSeparator {
   bottom: 0;
   padding: 10px 30px 0;
   overflow: auto;
-  -webkit-overflow-scrolling: touch; }
+  -webkit-overflow-scrolling: touch;
+}
 
 .thumbnail {
-  margin: 0 10px 5px 10px; }
+  margin: 0 10px 5px 10px;
+}
 
 html[dir='ltr'] .thumbnail {
-  float: left; }
+  float: left;
+}
 
 html[dir='rtl'] .thumbnail {
-  float: right; }
+  float: right;
+}
 
 #thumbnailView > a:last-of-type > .thumbnail {
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+}
 
 #thumbnailView > a:last-of-type > .thumbnail:not([data-loaded]) {
-  margin-bottom: 9px; }
+  margin-bottom: 9px;
+}
 
 .thumbnail:not([data-loaded]) {
   border: 1px dashed rgba(255, 255, 255, 0.5);
-  margin: -1px 9px 4px 9px; }
+  margin: (-1px) 9px 4px 9px;
+}
 
 .thumbnailImage {
   border: 1px solid transparent;
@@ -1269,34 +1150,40 @@ html[dir='rtl'] .thumbnail {
   opacity: 0.8;
   z-index: 99;
   background-color: white;
-  background-clip: content-box; }
+  background-clip: content-box;
+}
 
 .thumbnailSelectionRing {
   border-radius: 2px;
-  padding: 7px; }
+  padding: 7px;
+}
 
 a:focus > .thumbnail > .thumbnailSelectionRing > .thumbnailImage,
 .thumbnail:hover > .thumbnailSelectionRing > .thumbnailImage {
-  opacity: 0.9; }
+  opacity: 0.9;
+}
 
 a:focus > .thumbnail > .thumbnailSelectionRing,
 .thumbnail:hover > .thumbnailSelectionRing {
-  background-color: rgba(255, 255, 255, 0.15);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+  background-color: hsla(0, 0%, 100%, 0.15);
+  background-image: linear-gradient(hsla(0, 0%, 100%, 0.05), hsla(0, 0%, 100%, 0));
   background-clip: padding-box;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05) inset, 0 0 1px rgba(255, 255, 255, 0.2) inset, 0 0 1px rgba(0, 0, 0, 0.2);
-  color: rgba(255, 255, 255, 0.9); }
+  box-shadow: 0 1px 0 hsla(0, 0%, 100%, 0.05) inset, 0 0 1px hsla(0, 0%, 100%, 0.2) inset, 0 0 1px hsla(0, 0%, 0%, 0.2);
+  color: hsla(0, 0%, 100%, 0.9);
+}
 
 .thumbnail.selected > .thumbnailSelectionRing > .thumbnailImage {
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
-  opacity: 1; }
+  box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.5);
+  opacity: 1;
+}
 
 .thumbnail.selected > .thumbnailSelectionRing {
-  background-color: rgba(255, 255, 255, 0.3);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+  background-color: hsla(0, 0%, 100%, 0.3);
+  background-image: linear-gradient(hsla(0, 0%, 100%, 0.05), hsla(0, 0%, 100%, 0));
   background-clip: padding-box;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05) inset, 0 0 1px rgba(255, 255, 255, 0.1) inset, 0 0 1px rgba(0, 0, 0, 0.2);
-  color: white; }
+  box-shadow: 0 1px 0 hsla(0, 0%, 100%, 0.05) inset, 0 0 1px hsla(0, 0%, 100%, 0.1) inset, 0 0 1px hsla(0, 0%, 0%, 0.2);
+  color: hsla(0, 0%, 100%, 1);
+}
 
 #outlineView,
 #attachmentsView {
@@ -1307,21 +1194,26 @@ a:focus > .thumbnail > .thumbnailSelectionRing,
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   -webkit-user-select: none;
-  -moz-user-select: none; }
+  -moz-user-select: none;
+}
 
 #outlineView {
-  padding: 4px 4px 0; }
+  padding: 4px 4px 0;
+}
 
 #attachmentsView {
-  padding: 3px 4px 0; }
+  padding: 3px 4px 0;
+}
 
 html[dir='ltr'] .outlineWithDeepNesting > .outlineItem,
 html[dir='ltr'] .outlineItem > .outlineItems {
-  margin-left: 20px; }
+  margin-left: 20px;
+}
 
 html[dir='rtl'] .outlineWithDeepNesting > .outlineItem,
 html[dir='rtl'] .outlineItem > .outlineItems {
-  margin-right: 20px; }
+  margin-right: 20px;
+}
 
 .outlineItem > a,
 .attachmentsItem > button {
@@ -1332,88 +1224,112 @@ html[dir='rtl'] .outlineItem > .outlineItems {
   height: auto;
   margin-bottom: 1px;
   border-radius: 2px;
-  color: #646464;
+  color: $interface--color;
   font-size: 13px;
   line-height: 15px;
   -moz-user-select: none;
-  white-space: normal; }
+  white-space: normal;
+}
 
 .attachmentsItem > button {
   border: 0 none;
   background: none;
   cursor: pointer;
-  width: 100%; }
+  width: 100%;
+}
 
 html[dir='ltr'] .outlineItem > a {
-  padding: 2px 0 5px 4px; }
+  padding: 2px 0 5px 4px;
+}
 
 html[dir='ltr'] .attachmentsItem > button {
   padding: 2px 0 3px 7px;
-  text-align: left; }
+  text-align: left;
+}
 
 html[dir='rtl'] .outlineItem > a {
-  padding: 2px 4px 5px 0; }
+  padding: 2px 4px 5px 0;
+}
 
 html[dir='rtl'] .attachmentsItem > button {
   padding: 2px 7px 3px 0;
-  text-align: right; }
+  text-align: right;
+}
 
 .outlineItemToggler {
   position: relative;
   height: 0;
   width: 0;
-  color: rgba(255, 255, 255, 0.5); }
+  color: hsla(0, 0%, 100%, 0.5);
+}
 
 .outlineItemToggler::before {
   content: url(../images/treeitem-expanded.png);
   display: inline-block;
-  position: absolute; }
+  position: absolute;
+}
 
 html[dir='ltr'] .outlineItemToggler.outlineItemsHidden::before {
-  content: url(../images/treeitem-collapsed.png); }
+  content: url(../images/treeitem-collapsed.png);
+}
 
 html[dir='rtl'] .outlineItemToggler.outlineItemsHidden::before {
-  content: url(../images/treeitem-collapsed-rtl.png); }
+  content: url(../images/treeitem-collapsed-rtl.png);
+}
 
 .outlineItemToggler.outlineItemsHidden ~ .outlineItems {
-  display: none; }
+  display: none;
+}
 
 html[dir='ltr'] .outlineItemToggler {
-  float: left; }
+  float: left;
+}
 
 html[dir='rtl'] .outlineItemToggler {
-  float: right; }
+  float: right;
+}
 
 html[dir='ltr'] .outlineItemToggler::before {
-  right: 4px; }
+  right: 4px;
+}
 
 html[dir='rtl'] .outlineItemToggler::before {
-  left: 4px; }
+  left: 4px;
+}
 
 .outlineItemToggler:hover,
 .outlineItemToggler:hover + a,
 .outlineItemToggler:hover ~ .outlineItems,
 .outlineItem > a:hover,
 .attachmentsItem > button:hover {
-  background-color: rgba(255, 255, 255, 0.02);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+  background-color: hsla(0, 0%, 100%, 0.02);
+  background-image: linear-gradient(hsla(0, 0%, 100%, 0.05), hsla(0, 0%, 100%, 0));
   background-clip: padding-box;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05) inset, 0 0 1px rgba(255, 255, 255, 0.2) inset, 0 0 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 0 hsla(0, 0%, 100%, 0.05) inset, 0 0 1px hsla(0, 0%, 100%, 0.2) inset, 0 0 1px hsla(0, 0%, 0%, 0.2);
   border-radius: 2px;
-  color: #717171; }
+  color: lighten($interface--color, 5%);
+}
 
 .outlineItem.selected {
-  background-color: rgba(255, 255, 255, 0.08);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+  background-color: hsla(0, 0%, 100%, 0.08);
+  background-image: linear-gradient(hsla(0, 0%, 100%, 0.05), hsla(0, 0%, 100%, 0));
   background-clip: padding-box;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05) inset, 0 0 1px rgba(255, 255, 255, 0.1) inset, 0 0 1px rgba(0, 0, 0, 0.2);
-  color: white; }
+  box-shadow: 0 1px 0 hsla(0, 0%, 100%, 0.05) inset, 0 0 1px hsla(0, 0%, 100%, 0.1) inset, 0 0 1px hsla(0, 0%, 0%, 0.2);
+  color: hsla(0, 0%, 100%, 1);
+}
 
 .noResults {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.8);
+  color: hsla(0, 0%, 100%, 0.8);
   font-style: italic;
-  cursor: default; }
+  cursor: default;
+}
+
+// TODO: file FF bug to support ::-moz-selection:window-inactive
+//   so we can override the opaque grey background when the window is inactive
+//   see https://bugzilla.mozilla.org/show_bug.cgi?id=706209
+// ::selection background: rgba(0,0,255,0.3)
+// ::-moz-selection background: rgba(0,0,255,0.3)
 
 #errorWrapper {
   background: none repeat scroll 0 0 #FF5555;
@@ -1423,126 +1339,156 @@ html[dir='rtl'] .outlineItemToggler::before {
   right: 0;
   z-index: 1000;
   padding: 20px 15px;
-  font-size: 0.8em; }
+  font-size: 0.8em;
+}
 
 #errorWrapper button {
-  color: white;
+  color: $white;
   padding: 5px 10px;
   background: transparent;
-  border-radius: 3px;
-  border: 1px solid rgba(255, 255, 255, 0.6); }
-  #errorWrapper button:hover {
-    background-color: rgba(255, 255, 255, 0.2); }
+  border-radius: $radius;
+  border: 1px solid rgba($white, 0.6);
+
+  &:hover {
+    background-color: rgba($white, 0.2);
+  }
+}
 
 #errorMessage {
-  margin-right: 20px; }
+  margin-right: 20px;
+}
 
 .loadingInProgress #errorWrapper {
-  top: 37px; }
+  top: 37px;
+}
 
 #errorMessageLeft {
-  float: left; }
+  float: left;
+}
 
 #errorMessageRight {
-  float: right; }
+  float: right;
+}
 
 #errorMoreInfo {
   background-color: #FFFFFF;
   color: black;
   padding: 3px;
   margin: 3px;
-  width: 98%; }
+  width: 98%;
+}
 
 .overlayButton {
   width: auto;
   margin: 3px 4px 2px 4px !important;
-  padding: 2px 6px 3px 6px; }
+  padding: 2px 6px 3px 6px;
+}
 
 #overlayContainer {
   display: table;
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-  z-index: 40000; }
+  background-color: hsla(0, 0%, 0%, 0.2);
+  z-index: 40000;
+}
 
 #overlayContainer > * {
   overflow: auto;
-  -webkit-overflow-scrolling: touch; }
+  -webkit-overflow-scrolling: touch;
+}
 
 #overlayContainer > .container {
   display: table-cell;
   vertical-align: middle;
-  text-align: center; }
+  text-align: center;
+}
 
 #overlayContainer > .container > .dialog {
   display: inline-block;
   padding: 15px;
   border-spacing: 4px;
-  color: #646464;
+  color: $interface--color;
   font-size: 12px;
   line-height: 14px;
-  background-color: #dddddd;
-  box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.08), inset 0 1px 1px rgba(0, 0, 0, 0.15), inset 0 -1px 0 rgba(255, 255, 255, 0.05), 0 1px 0 rgba(0, 0, 0, 0.15), 0 1px 1px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  background-color: $interface--background;
+  box-shadow: inset 1px 0 0 hsla(0, 0%, 100%, 0.08), inset 0 1px 1px hsla(0, 0%, 0%, 0.15), inset 0 -1px 0 hsla(0, 0%, 100%, 0.05), 0 1px 0 hsla(0, 0%, 0%, 0.15), 0 1px 1px hsla(0, 0%, 0%, 0.1);
+  border: 1px solid hsla(0, 0%, 0%, 0.5);
   border-radius: 4px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); }
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
 
 .dialog > .row {
-  display: table-row; }
+  display: table-row;
+}
 
 .dialog > .row > * {
-  display: table-cell; }
+  display: table-cell;
+}
 
 .dialog .toolbarField {
-  margin: 5px 0; }
+  margin: 5px 0;
+}
 
 .dialog .separator {
   display: block;
   margin: 4px 0 4px 0;
   height: 1px;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08); }
+  background-color: hsla(0, 0%, 0%, 0.5);
+  box-shadow: 0 0 0 1px hsla(0, 0%, 100%, 0.08);
+}
 
 .dialog .buttonRow {
   text-align: center;
-  vertical-align: middle; }
+  vertical-align: middle;
+}
 
 .dialog :link {
-  color: white; }
+  color: white;
+}
 
 #passwordOverlay > .dialog {
-  text-align: center; }
+  text-align: center;
+}
 
 #passwordOverlay .toolbarField {
-  width: 200px; }
+  width: 200px;
+}
 
 #documentPropertiesOverlay > .dialog {
-  text-align: left; }
+  text-align: left;
+}
 
 #documentPropertiesOverlay .row > * {
-  min-width: 100px; }
+  min-width: 100px;
+}
 
 html[dir='ltr'] #documentPropertiesOverlay .row > * {
-  text-align: left; }
+  text-align: left;
+}
 
 html[dir='rtl'] #documentPropertiesOverlay .row > * {
-  text-align: right; }
+  text-align: right;
+}
 
 #documentPropertiesOverlay .row > span {
   width: 125px;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+}
 
 #documentPropertiesOverlay .row > p {
   max-width: 225px;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+}
 
 #documentPropertiesOverlay .buttonRow {
-  margin-top: 10px; }
+  margin-top: 10px;
+}
 
 .clearBoth {
-  clear: both; }
+  clear: both;
+}
 
 .fileInput {
   background: white;
@@ -1551,7 +1497,8 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
   visibility: hidden;
   position: fixed;
   right: 0;
-  top: 0; }
+  top: 0;
+}
 
 #PDFBug {
   background: none repeat scroll 0 0 white;
@@ -1562,12 +1509,15 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
   bottom: 0;
   font-size: 10px;
   padding: 0;
-  width: 300px; }
+  width: 300px;
+}
 
 #PDFBug .controls {
   background: #EEEEEE;
+
   border-bottom: 1px solid #666666;
-  padding: 3px; }
+  padding: 3px;
+}
 
 #PDFBug .panels {
   bottom: 0;
@@ -1576,37 +1526,47 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
   -webkit-overflow-scrolling: touch;
   position: absolute;
   right: 0;
-  top: 27px; }
+  top: 27px;
+}
 
 #PDFBug button.active {
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .debuggerShowText {
   background: none repeat scroll 0 0 yellow;
-  color: blue; }
+  color: blue;
+}
 
 .debuggerHideText:hover {
-  background: none repeat scroll 0 0 yellow; }
+  background: none repeat scroll 0 0 yellow;
+}
 
 #PDFBug .stats {
   font-family: courier;
   font-size: 10px;
-  white-space: pre; }
+  white-space: pre;
+}
 
 #PDFBug .stats .title {
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 #PDFBug table {
-  font-size: 10px; }
+  font-size: 10px;
+}
 
 #viewer.textLayer-visible .textLayer {
-  opacity: 1; }
+  opacity: 1;
+}
 
 #viewer.textLayer-visible .canvasWrapper {
-  background-color: #80ff80; }
+  background-color: rgb(128, 255, 128);
+}
 
 #viewer.textLayer-visible .canvasWrapper canvas {
-  mix-blend-mode: screen; }
+  mix-blend-mode: screen;
+}
 
 #viewer.textLayer-visible .textLayer > div {
   background-color: rgba(255, 255, 0, 0.1);
@@ -1614,24 +1574,29 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
   border: solid 1px rgba(255, 0, 0, 0.5);
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 #viewer.textLayer-hover .textLayer > div:hover {
   background-color: white;
-  color: black; }
+  color: black;
+}
 
 #viewer.textLayer-shadow .textLayer > div {
   background-color: rgba(255, 255, 255, 0.6);
-  color: black; }
+  color: black;
+}
 
 .grab-to-pan-grab {
   cursor: url("../images/grab.cur"), move !important;
   cursor: -webkit-grab !important;
   cursor: -moz-grab !important;
-  cursor: grab !important; }
+  cursor: grab !important;
+}
 
 .grab-to-pan-grab *:not(input):not(textarea):not(button):not(select):not(:link) {
-  cursor: inherit !important; }
+  cursor: inherit !important;
+}
 
 .grab-to-pan-grab:active,
 .grab-to-pan-grabbing {
@@ -1647,69 +1612,113 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
   right: 0;
   bottom: 0;
   overflow: hidden;
-  z-index: 50000; }
+  z-index: 50000;
+}
 
 @page {
-  margin: 0; }
+  margin: 0;
+}
 
 #printContainer {
-  display: none; }
+  display: none;
+}
 
 @media screen and (min-resolution: 2dppx) {
   html[dir='ltr'] .toolbarButton::before,
   html[dir='rtl'] .toolbarButton::before {
-    left: -1px; }
+    left: -1px;
+  }
+
   html[dir='ltr'] .secondaryToolbarButton::before {
-    left: -2px; }
+    left: -2px;
+  }
+
   html[dir='rtl'] .secondaryToolbarButton::before {
-    left: 186px; }
+    left: 186px;
+  }
+
+  .toolbarField.pageNumber.visiblePageIsLoading,
+  #findInput[data-status="pending"] {}
+
   html[dir='rtl'] .toolbarButton#sidebarToggle::before {
-    content: url(../images/toolbarButton-sidebarToggle-rtl@2x.png); }
+    content: url(../images/toolbarButton-sidebarToggle-rtl@2x.png);
+  }
+
   .outlineItemToggler::before {
     -webkit-transform: scale(0.5);
     transform: scale(0.5);
     top: -1px;
-    content: url(../images/treeitem-expanded@2x.png); }
+    content: url(../images/treeitem-expanded@2x.png);
+  }
+
   html[dir='ltr'] .outlineItemToggler.outlineItemsHidden::before {
-    content: url(../images/treeitem-collapsed@2x.png); }
+    content: url(../images/treeitem-collapsed@2x.png);
+  }
+
   html[dir='rtl'] .outlineItemToggler.outlineItemsHidden::before {
-    content: url(../images/treeitem-collapsed-rtl@2x.png); }
+    content: url(../images/treeitem-collapsed-rtl@2x.png);
+  }
+
   html[dir='ltr'] .outlineItemToggler::before {
-    right: 0; }
+    right: 0;
+  }
+
   html[dir='rtl'] .outlineItemToggler::before {
-    left: 0; } }
+    left: 0;
+  }
+}
 
 @media print {
   /* General rules for printing. */
   body {
-    background: transparent none; }
+    background: transparent none;
+  }
+
   /* Rules for browsers that don't support mozPrintCallback. */
   #sidebarContainer, #secondaryToolbar, .toolbar, #loadingBox, #errorWrapper, .textLayer {
-    display: none; }
+    display: none;
+  }
+
   #viewerContainer {
-    overflow: visible; }
+    overflow: visible;
+  }
+
   #mainContainer, #viewerContainer, .page, .page canvas {
     position: static;
     padding: 0;
-    margin: 0; }
+    margin: 0;
+  }
+
   .page {
     float: left;
     display: none;
     border: none;
     box-shadow: none;
     background-clip: content-box;
-    background-color: white; }
+    background-color: white;
+  }
+
   .page[data-loaded] {
-    display: block; }
+    display: block;
+  }
+
   .fileInput {
-    display: none; }
+    display: none;
+  }
+
   /* Rules for browsers that support PDF.js printing */
   body[data-pdfjsprinting] #outerContainer {
-    display: none; }
+    display: none;
+  }
+
   body[data-pdfjsprinting] #printContainer {
-    display: block; }
+    display: block;
+  }
+
   #printContainer {
-    height: 100%; }
+    height: 100%;
+  }
+
   /* wrapper around (scaled) print canvas elements */
   #printContainer > div {
     position: relative;
@@ -1719,54 +1728,89 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
     height: 1px;
     overflow: visible;
     page-break-after: always;
-    page-break-inside: avoid; }
+    page-break-inside: avoid;
+  }
+
   #printContainer canvas,
   #printContainer img {
-    display: block; } }
+    display: block;
+  }
+}
 
 .visibleLargeView,
 .visibleMediumView,
 .visibleSmallView {
-  display: none; }
+  display: none;
+}
 
 @media all and (max-width: 840px) {
   #sidebarContent {
-    background-color: rgba(221, 221, 221, 0.8); }
+    background-color: rgba($interface--background, 0.8);
+  }
+
   html[dir='ltr'] #outerContainer.sidebarOpen #viewerContainer {
-    left: 0; }
+    left: 0;
+  }
+
   html[dir='rtl'] #outerContainer.sidebarOpen #viewerContainer {
-    right: 0; }
+    right: 0;
+  }
+
   #outerContainer .hiddenLargeView,
   #outerContainer .hiddenMediumView {
-    display: inherit; }
+    display: inherit;
+  }
+
   #outerContainer .visibleLargeView,
   #outerContainer .visibleMediumView {
-    display: none; } }
+    display: none;
+  }
+}
 
 @media all and (max-width: 770px) {
   #outerContainer .hiddenLargeView {
-    display: none; }
+    display: none;
+  }
+
   #outerContainer .visibleLargeView {
-    display: inherit; } }
+    display: inherit;
+  }
+}
 
 @media all and (max-width: 700px) {
   #outerContainer .hiddenMediumView {
-    display: none; }
+    display: none;
+  }
+
   #outerContainer .visibleMediumView {
-    display: inherit; } }
+    display: inherit;
+  }
+}
 
 @media all and (max-width: 640px) {
   .hiddenSmallView, .hiddenSmallView * {
-    display: none; }
+    display: none;
+  }
+
   .visibleSmallView {
-    display: inherit; }
+    display: inherit;
+  }
+
   .toolbarButtonSpacer {
-    width: 0; }
+    width: 0;
+  }
+
   html[dir='ltr'] .findbar {
-    left: 38px; }
+    left: 38px;
+  }
+
   html[dir='rtl'] .findbar {
-    right: 38px; } }
+    right: 38px;
+  }
+}
 
 @media all and (max-width: 535px) {
   #scaleSelectContainer {
-    display: none; } }
+    display: none;
+  }
+}

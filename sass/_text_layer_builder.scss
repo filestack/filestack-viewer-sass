@@ -1,0 +1,62 @@
+.textLayer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  opacity: 0.2;
+  line-height: 1;
+}
+
+.textLayer > span {
+  color: transparent;
+  position: absolute;
+  white-space: pre;
+  cursor: text;
+  transform-origin: 0% 0%;
+}
+
+.textLayer .highlight {
+  margin: -1px;
+  padding: 1px;
+
+  background-color: $text_layer_highlight;
+  border-radius: $radius;
+}
+
+.textLayer .highlight.begin {
+  border-radius: $radius 0px 0px $radius;
+}
+
+.textLayer .highlight.end {
+  border-radius: 0px $radius $radius 0px;
+}
+
+.textLayer .highlight.middle {
+  border-radius: 0px;
+}
+
+.textLayer .highlight.selected {
+  background-color: $text_layer_highlight--selected;
+}
+
+.textLayer ::selection {
+  background: $text_layer_highlight--selection;
+}
+
+.textLayer .endOfContent {
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  right: 0px;
+  bottom: 0px;
+  z-index: -1;
+  cursor: default;
+  user-select: none;
+}
+
+.textLayer .endOfContent.active {
+  top: 0px;
+}
